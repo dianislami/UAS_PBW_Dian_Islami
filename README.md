@@ -18,6 +18,22 @@ Berisi inti logika aplikasi seperti model, controller, dan service yang menjalan
 Menyimpan definisi semua rute (URL) yang digunakan aplikasi, dan menentukan controller atau fungsi apa yang akan dijalankan ketika rute tersebut diakses. Ada 3 rute utama:
 * Dashboard: Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
  → Menampilkan halaman dashboard utama yang berisi ringkasan statistik alumni dan jumlah lowongan.
+* Alumni:
+    * Route::get('/alumni', [AlumniController::class, 'index'])->name('alumni'); → Menampilkan daftar alumni dengan fitur pencarian, filter, dan statistik.
+    * Route::get('/alumni/create', [AlumniController::class, 'create'])->name('tambah_alumni'); → Menampilkan formulir untuk menambahkan data alumni baru.
+    * Route::post('/alumni', [AlumniController::class, 'store'])->name('alumni_store'); → Menyimpan data alumni baru yang diinput dari formulir.
+    * Route::get('/alumni/{alumni}', [AlumniController::class, 'show'])->name('detail_alumni'); → Menampilkan detail informasi dari alumni tertentu.
+    * Route::get('/alumni/{alumni}/edit', [AlumniController::class, 'edit'])->name('edit_alumni'); → Menampilkan formulir untuk mengedit data alumni tertentu.
+    * Route::put('/alumni/{alumni}', [AlumniController::class, 'update'])->name('alumni_update'); → Memperbarui data alumni berdasarkan input dari formulir edit.
+    * Route::delete('/alumni/{alumni}', [AlumniController::class, 'destroy'])->name('alumni-destroy'); → Menghapus data alumni yang dipilih dari database.
+* Lowongan:
+    * Route::get('/lowongan', [LowonganController::class, 'index'])->name('lowongan'); → Menampilkan daftar lowongan kerja dengan fitur pencarian dan filter.
+    * Route::get('/lowongan/create', [LowonganController::class, 'create'])->name('tambah_lowongan'); → Menampilkan formulir untuk menambahkan lowongan kerja baru.
+    * Route::post('/lowongan', [LowonganController::class, 'store'])->name('lowongan_store'); → Menyimpan data lowongan kerja baru ke database.
+    * Route::get('/lowongan/{lowongan}', [LowonganController::class, 'show'])->name('lowongan.show'); → Menampilkan detail dari lowongan kerja tertentu.
+    * Route::get('/lowongan/{lowongan}/edit', [LowonganController::class, 'edit'])->name('edit_lowongan'); → Menampilkan formulir untuk mengedit informasi lowongan kerja.
+    * Route::put('/lowongan/{lowongan}', [LowonganController::class, 'update'])->name('lowongan_update'); → Memperbarui data lowongan kerja yang dipilih.
+    * Route::delete('/lowongan/{lowongan}', [LowonganController::class, 'destroy'])->name('lowongan_destroy'); → Menghapus data lowongan kerja dari sistem.
 ### resoirces/views/
 Tempat menyimpan file tampilan (view) berbasis Blade yang digunakan untuk menampilkan antarmuka pengguna (UI) di browser.
 ### database/migrations/
