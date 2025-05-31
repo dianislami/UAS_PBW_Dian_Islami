@@ -15,7 +15,9 @@ Berisi inti logika aplikasi seperti model, controller, dan service yang menjalan
 * LowonganController.php: Controller ini mengatur proses pengelolaan lowongan kerja, mulai dari penambahan, pengeditan, pencarian, hingga filtering berdasarkan lokasi dan jenis pekerjaan. Mendukung juga AJAX untuk pemuatan data dinamis dan validasi data yang ketat sebelum disimpan.
 * DashboardController.php: Controller ini menyajikan statistik ringkasan alumni berdasarkan status pekerjaan serta total jumlah lowongan untuk ditampilkan di halaman dashboard. Sederhana namun efektif sebagai pusat informasi bagi admin atau pengguna internal.
 ### routes/
-Menyimpan definisi semua rute (URL) yang digunakan aplikasi, dan menentukan controller atau fungsi apa yang akan dijalankan ketika rute tersebut diakses.
+Menyimpan definisi semua rute (URL) yang digunakan aplikasi, dan menentukan controller atau fungsi apa yang akan dijalankan ketika rute tersebut diakses. Ada 3 rute utama:
+* Dashboard: Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+ → Menampilkan halaman dashboard utama yang berisi ringkasan statistik alumni dan jumlah lowongan.
 ### resoirces/views/
 Tempat menyimpan file tampilan (view) berbasis Blade yang digunakan untuk menampilkan antarmuka pengguna (UI) di browser.
 ### database/migrations/
