@@ -1,10 +1,39 @@
 # UAS PBW 
 ## Nama    : Dian Islami
 ## NPM     : 2308107010048
-## A. Deskripsi Proyek
+
+## A. Instalasi Composer
+1. Download Composer:
+Buka terminal (Linux/Mac) atau Command Prompt (Windows), lalu jalankan:
+
+       curl -sS https://getcomposer.org/installer | php
+2. Untuk Windows, bisa download installer langsung dari: https://getcomposer.org/download/. Install Composer secara global (opsional, agar bisa dipanggil dengan composer saja):
+
+       
+       sudo mv composer.phar /usr/local/bin/composer
+3. Cek versi Composer:
+
+       composer -V
+
+## B. Instalasi Proyek Laravel
+1. Install Laravel menggunakan Composer:
+
+       composer global require laravel/installer
+2. Pastikan direktori global Composer sudah di-include ke PATH: Tambahkan ini ke file ~/.bashrc, ~/.zshrc, atau ~/.bash_profile:
+
+        export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+3. Buat project Laravel baru:
+
+        composer create-project laravel/laravel nama_project
+4. Masuk ke direktori project dan jalankan server:
+
+        cd nama_project
+        php artisan serve
+
+## C. Deskripsi Proyek
 Proyek ini bertujuan untuk membangun sebuah aplikasi berbasis web sederhana menggunakan Laravel yang dapat membantu institusi pendidikan dalam mengelola data alumni sekaligus menyediakan informasi lowongan pekerjaan secara terpusat. Sistem ini memiliki dua fitur utama, yaitu manajemen data alumni dan manajemen lowongan kerja. Fitur alumni memungkinkan pengguna untuk menambahkan, mengedit, atau menghapus data alumni serta melihat status alumni seperti bekerja, kuliah, atau wirausaha. Sementara itu, fitur lowongan kerja memungkinkan untuk menambahkan informasi pekerjaan yang dapat dilihat oleh pengguna lain, lengkap dengan deskripsi, lokasi, sistem kerja (WFO/WFH/Hybrid), jenis pekerjaan (magang, kontrak, tetap), dan rentang gaji. Sistem ini dilengkapi juga dengan fungsi pencarian dan tampilan detail untuk kenyamanan pengguna. Dengan menggunakan Laravel sebagai framework utama, proyek ini dirancang dengan prinsip CRUD (Create, Read, Update, Delete) yang sederhana namun fungsional, dan dapat dikembangkan lebih lanjut di masa depan sesuai kebutuhan.
 
-## B. Struktur Penting Proyek
+## D. Struktur Penting Proyek
 ### 1. app/
 Berisi inti logika aplikasi seperti model, controller, dan service yang menjalankan fungsi utama dari sistem.
 #### 1) Model
